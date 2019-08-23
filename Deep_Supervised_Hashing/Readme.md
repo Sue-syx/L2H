@@ -4,14 +4,16 @@
 * 让网络的输出达到以下的要求: 相似的时候向量距离应该较近，反之则远.
 * Siamese Network
 
-### Loss Function  
-* 单个Loss Func定义 ：  
-<div align=center><img width=40% height=40% src="https://img-blog.csdn.net/20160908141822237"/></div> 
-<br>
-* 总体Loss Func ：
-<div align=center><img width=40% height=40% src="https://img-blog.csdn.net/20160908141831771"/></div>  
-<br>
-* 优化 ：  
-  使用欧氏距离，使用额外的regularizer取代二值约束  
-<div align=center><img width=40% height=40% src="https://img-blog.csdn.net/20160908141840503"/></div> <br>
-<div align=center><img width=40% height=40% src="https://img-blog.csdn.net/20160908141848503"/></div>
+### Loss Function
+<ul>
+    <li>单个Loss Func定义 ： </li>
+      <div align=center><img width=40% height=40% src="https://img-blog.csdn.net/20160908141822237"/></div> 
+      <br>
+    <li>总体Loss Func ：</li>
+      <div align=center><img width=40% height=40% src="https://img-blog.csdn.net/20160908141831771"/></div>  
+      <br>
+    <li>优化 ：</li>
+      <br> 使用欧氏距离，使用额外的regularizer取代二值约束
+      <div align=center><img width=40% height=40% src="https://img-blog.csdn.net/20160908141840503"/></div> <br>
+      <div align=center><img width=40% height=40% src="https://img-blog.csdn.net/20160908141848503"/></div>
+</ul>
