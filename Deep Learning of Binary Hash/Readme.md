@@ -6,7 +6,7 @@
 
 <div align=center><img width=50% height=50% src="https://img-blog.csdn.net/20180518233641116?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L29KaU1vRGVZZTEyMzQ1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70"/></div> 
 
-<u>### Hash-like 二值编码学习</u>
+### Hash-like 二值编码学习
 假设网络的最终输出分类层 F8 依赖于 h 个hidden attributes，各属性是 0 或 1(0表示不存在，1表示存在).  
 如果图像的二值激活编码相似，其应该具有相同标签.
 - 该隐层 H 是一个全连接层，其神经元激活情况由后面的 F8 层来控制，F8 层编码了图像语义并用于最终分类.
