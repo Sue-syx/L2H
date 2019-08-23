@@ -1,4 +1,5 @@
-## Deep Supervised Hashing  
+## Deep Supervised Hashing 
+[Deep Learning of Binary Hash Codes for Fast Image Retrieval　CVPR15](https://www.iis.sinica.edu.tw/~kevinlin311.tw/cvprw15.pdf)
 * 使用神经网络直接学习哈希编码，并用正则化方法将编码进行约束.    
 * 让神经网络的输出通过正则的手法约束到 {-1，1} 之内.（后续使用 0 作为阈值进行离散化)
 * 让网络的输出达到以下的要求: 相似的时候向量距离应该较近，反之则远.
