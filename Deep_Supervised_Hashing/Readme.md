@@ -6,10 +6,10 @@
 
 ### Loss Function  
 * 单个Loss Func定义 ：  
-<div align=center><img width="429" height="129" src="https://img-blog.csdn.net/20160908141822237"/></div>  
+<div align=center><img width=40% height=40% src="https://img-blog.csdn.net/20160908141822237"/></div>  
 * 总体Loss Func ：
-<div align=center><img width="446" height="100" src="https://img-blog.csdn.net/20160908141831771"/></div>  
+<div align=center><img width=40% height=40% src="https://img-blog.csdn.net/20160908141831771"/></div>  
 * 优化 ：  
   使用欧氏距离，使用额外的regularizer取代二值约束  
-<div align=center><img width="460" height="129" src="https://img-blog.csdn.net/20160908141840503"/></div> <br>
-<div align=center><img width="375" height="136" src="https://img-blog.csdn.net/20160908141848503"/></div>
+<div align=center><img width=40% height=40% src="https://img-blog.csdn.net/20160908141840503"/></div> <br>
+<div align=center><img width=40% height=40% src="https://img-blog.csdn.net/20160908141848503"/></div>
