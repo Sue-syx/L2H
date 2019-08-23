@@ -13,7 +13,7 @@
       <div align=center><img width=40% height=40% src="https://img-blog.csdn.net/20160908141831771"/></div>  
       <br>
     <li>优化 ：</li>
-      <br> 使用欧氏距离，使用额外的regularizer取代二值约束
+      使用欧氏距离，使用额外的regularizer取代二值约束
       <div align=center><img width=40% height=40% src="https://img-blog.csdn.net/20160908141840503"/></div> <br>
       <div align=center><img width=40% height=40% src="https://img-blog.csdn.net/20160908141848503"/></div>
 </ul>
