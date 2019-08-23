@@ -5,7 +5,7 @@
 * 让网络的输出达到以下的要求: 相似的时候向量距离应该较近，反之则远.
 * Siamese Network  
 
-<div align=center><img width=40% height=40% src="https://img-blog.csdn.net/20160908141235901"/></div> 
+<div align=center><img width=60% height=60% src="https://img-blog.csdn.net/20160908141235901"/></div> 
 
 ### Loss Function
 <ul>
