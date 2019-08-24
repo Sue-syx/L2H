@@ -9,16 +9,5 @@ DPSH(deep pairwise-supervised hashing)，通过深度学习从pairwise label中�
 <div align=center><img width=40% height=40% src="https://img-blog.csdn.net/20161018152020051"/></div> 
 
 ### Object Function  
-给定所有点的二进制码B=\{ b_{i} \}_{i=1}^n, 点对之间的似然函数可以定义如下：　　
-$ps_{ij}|B=\{^{\sigma(\Omega_{ij}),　　　　 s_{ij}=1} _{1-\sigma(\Omega_{ij}),\qquad s_{ij}=0}$
-<ul>
-    <li>单个Loss Func定义 ： </li>
-      <div align=center><img width=40% height=40% src="https://img-blog.csdn.net/20160908141822237"/></div> 
-      <br>
-    <li>总体Loss Func ：</li>
-      <div align=center><img width=40% height=40% src="https://img-blog.csdn.net/20160908141831771"/></div>  
-      <br>
-    <li>优化(European distance + regularizer) ：</li>
-      <div align=center><img width=40% height=40% src="https://img-blog.csdn.net/20160908141840503"/></div> <br>
-      <div align=center><img width=40% height=40% src="https://img-blog.csdn.net/20160908141848503"/></div>
-</ul>
+- [Reference](https://blog.csdn.net/zijin0802034/article/details/52839769)
+
