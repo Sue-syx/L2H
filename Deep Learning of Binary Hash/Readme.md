@@ -1,5 +1,5 @@
 ## Deep Learning of Binary Hash Codes
-[Deep Learning of Binary Hash Codes for Fast Image Retrieval　CVPR15](https://www.cv-foundation.org/openaccess/content_cvpr_workshops_2015/W03/papers/Lin_Deep_Learning_of_2015_CVPR_paper.pdf)
+[Deep Learning of Binary Hash Codes for Fast Image Retrieval　CVPR15](https://www.cv-foundation.org/openaccess/content_cvpr_workshops_2015/W03/papers/Lin_Deep_Learning_of_2015_CVPR_paper.pdf)  
 [> Code <](https://github.com/flyingpot/pytorch_deephash)
 * Module1 - 在ImageNet上有监督地预训练CNN网络，以学习得到丰富的mid-level图像表示特征； 
 * Module2 - 添加隐层(latent) ，通过在目标图像数据集finetuning网络，隐层可以学习到图像的 hashes-like 编码表示；
