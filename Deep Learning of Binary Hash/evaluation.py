@@ -106,10 +106,10 @@ if __name__ == '__main__':
         print('mAP:', map)
 
 
-    if (os.path.exists('./result/train_binary') 
-        and os.path.exists('./result/train_label') 
+    if (os.path.exists('./result/train_binary')
+        and os.path.exists('./result/train_label')
         and os.path.exists('./result/test_binary')
-        and os.path.exists('./result/test_label') 
+        and os.path.exists('./result/test_label')
         and args.pretrained == 0):
         train_binary = torch.load('./result/train_binary')
         train_label = torch.load('./result/train_label')

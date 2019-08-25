@@ -30,20 +30,16 @@ if __name__ == '__main__':
     best_acc = 0
     start_epoch = 1
     transform_train = transforms.Compose(
-        [transforms.Resize(256),
-         transforms.RandomCrop(227),
-         transforms.RandomHorizontalFlip(),
-         transforms.ToTensor(),
+        [transforms.Resize(256), transforms.RandomCrop(227),
+         transforms.RandomHorizontalFlip(), transforms.ToTensor(),
          transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010))])
     transform_test = transforms.Compose(
-        [transforms.Resize(227),
-         transforms.ToTensor(),
+        [transforms.Resize(227), transforms.ToTensor(),
          transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010))])
     trainset = datasets.CIFAR10(root='data', train=True, download=False,
                                 transform=transform_train)
     trainloader = torch.utils.data.DataLoader(trainset, batch_size=128,
                                               shuffle=True, num_workers=2)
-
     testset = datasets.CIFAR10(root='data', train=False, download=False,
                                transform=transform_test)
     testloader = torch.utils.data.DataLoader(testset, batch_size=100,
@@ -52,7 +48,6 @@ if __name__ == '__main__':
     net = AlexNetPlusLatent(args.bits)
 
     use_cuda = torch.cuda.is_available()
-
     if use_cuda:
         net.cuda()
 

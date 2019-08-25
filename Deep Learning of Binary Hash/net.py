@@ -19,6 +19,6 @@ class AlexNetPlusLatent(nn.Module):
         x = x.view(x.size(0), 256 * 6 * 6)
         x = self.remain(x)
         x = self.Linear1(x)
-        features = self.sigmoid(x)
-        result = self.Linear2(features)
+        features = self.sigmoid(x) # Latent Layer
+        result = self.Linear2(features) # Fs Layer
         return features, result
