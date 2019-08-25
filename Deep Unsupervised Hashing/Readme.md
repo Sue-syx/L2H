@@ -1,6 +1,6 @@
 ## Deep Unsupervised Hashing 
 [Learning Compact Binary Descriptors with Unsupervised Deep Neural Networks　CVPR16](https://www.iis.sinica.edu.tw/~kevinlin311.tw/cvpr16-deepbit.pdf)  
-[Code](https://github.com/kevinlin311tw/cvpr16-deepbit)
+[> Code <](https://github.com/kevinlin311tw/cvpr16-deepbit)
   
 利用从ImageNet上预训练的中间层的图像表示( mid-level image representation )  
 无监督学习到了二值描述子(DeepBit), 主要设计三个内容 ：  
