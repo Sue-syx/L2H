@@ -1,5 +1,6 @@
 ## Deep Supervised Hashing with Pairwise Labels
 [Feature Learning Based Deep Supervised Hashing with Pairwise Label　IJCAI16](https://www.ijcai.org/Proceedings/16/Papers/245.pdf)  
+[> Code <](https://github.com/jiangqy/DPSH-pytorch)
   
 DPSH(deep pairwise-supervised hashing)，通过深度学习从pairwise label中学习图像的特征和hash code.  
 使用CNN-F网络模型，上下两个CNN使用相同的网络结构，共享同样的权重 (Siamese Network).
