@@ -17,7 +17,7 @@
       <div align=center><img width=40% height=40% src="https://img-blog.csdn.net/20160908141831771"/></div>  
       <br>
     <li>优化(European distance + regularizer) ：
-    <br> 目标是最小化损失函数，但是前文的约束是二值的，离散不可导。训练时，不便于反向传播。</li>
+    <br> 目标是最小化损失函数，但是前文的约束是二值的，离散不可导。训练时，不便于反向传播。因此进行＞松弛＜</li>
       <div align=center><img width=40% height=40% src="https://img-blog.csdn.net/20160908141840503"/></div> <br>
       <div align=center><img width=40% height=40% src="https://img-blog.csdn.net/20160908141848503"/></div>
 </ul>
