@@ -3,7 +3,7 @@ from keras.datasets import cifar10
 from keras.preprocessing.image import ImageDataGenerator
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Activation, Flatten
-from keras.layers import Conv2D, MaxPooling2D, GlobalAveragePooling2D, AveragePooling2D
+from keras.layers import Conv2D, MaxPooling2D
 from keras.initializers import he_normal
 from keras import optimizers
 from keras.callbacks import LearningRateScheduler, TensorBoard
@@ -12,11 +12,11 @@ from keras.utils.data_utils import get_file
 
 num_classes = 10
 batch_size = 128
-epochs = 100
+epochs = 200
 iterations = 300
 dropout = 0.5
 weight_decay = 0.0001
-log_filepath = r'./vgg19_cifar10/'
+log_filepath = r'./result/cifar10/vgg19_cifar10/'
 
 from keras import backend as K
 
