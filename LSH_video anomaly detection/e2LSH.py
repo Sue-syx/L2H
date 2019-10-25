@@ -1,11 +1,26 @@
 import random
 import numpy as np
+from utils import euclideanDistance
 
 
 class TableNode(object):
     def __init__(self, index):
         self.val = index
         self.buckets = {}
+
+class BStates(object):
+	def __init__(self, cm, fp, rm, count=0, state=1):
+		self.val = fp
+		self.cm = cm
+		self.rm = rm
+		self.count = count
+		self.state = state
+
+
+class cmlist(object):
+	def __init__(self, index):
+		self.val = index
+		self.list = {}
 
 
 # 随机生成一组 a,b
@@ -137,13 +152,8 @@ def nn_search(dataSet, query, k, L, r, tableSize):
 
     result = set()
 
-    temp = e2LSH(dataSet, k, L, r, tableSize)
+    hashTable, hashFuncGroups, fpRand = e2LSH(dataSet, k, L, r, tableSize)
     C = pow(2, 32) - 5
-
-    hashTable = temp[0]
-    hashFuncGroups = temp[1]
-    fpRand = temp[2]
-
     for hashFuncGroup in hashFuncGroups:
 
         # get the fingerprint of query
