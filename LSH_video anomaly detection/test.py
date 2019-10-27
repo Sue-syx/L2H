@@ -2,6 +2,7 @@ import e2LSH
 import pyswarms as ps
 from utils import *
 from sklearn.metrics import roc_curve, auc  ###计算roc和auc
+import matplotlib.pyplot as plt
 
 
 def optimal_lsh(params):
@@ -79,8 +80,8 @@ if __name__ == "__main__":
     dim1 = k
     trainlen = len(dataSet)
     dimensions = dim0 * dim1 * L
-    optimizer = ps.single.GlobalBestPSO(n_particles=, dimensions=dimensions, options=options)
-    cost, Atotal = optimizer.optimize(pso, iters=1000)
+    optimizer = ps.single.GlobalBestPSO(n_particles=100, dimensions=dimensions, options=options)
+    cost, Atotal = optimizer.optimize(pso, iters=100)
     hashTable, hashFuncGroups, fpRand = e2LSH.e2lsh_test(dataSet, Atotal, k, L, r=1, tableSize=20)
     cm_list = e2LSH.generate_cm(hashTable, dataSet, k=20)
 
@@ -122,6 +123,22 @@ if __name__ == "__main__":
         score.append(Az)
         cm_list = e2LSH.update_cm(dataSet, hashTable, start + testindex, total_query, total_queryfp, total_queryindex, cm_list)
         cm_list = e2LSH.update_buckets(cm_list, threshold=0, tablesize=20)
+        ##
+        fpr, tpr, threshold = roc_curve(y_test, score)  ###计算真正率和假正率
+        roc_auc = auc(fpr, tpr)  ###计算auc的值
+        plt.figure()
+        lw = 2
+        plt.figure(figsize=(10, 10))
+        plt.plot(fpr, tpr, color='darkorange',
+                 lw=lw, label='ROC curve (area = %0.2f)' % roc_auc)  ###假正率为横坐标，真正率为纵坐标做曲线
+        plt.plot([0, 1], [0, 1], color='navy', lw=lw, linestyle='--')
+        plt.xlim([0.0, 1.0])
+        plt.ylim([0.0, 1.05])
+        plt.xlabel('False Positive Rate')
+        plt.ylabel('True Positive Rate')
+        plt.title('Receiver operating characteristic example')
+        plt.legend(loc="lower right")
+        plt.show()
 
     query = [-2.7769, -5.6967, 5.9179, 0.37671, 1]
     indexes = e2LSH.nn_search(dataSet, query, k=20, L=5, r=1, tableSize=20)
