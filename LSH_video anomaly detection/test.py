@@ -1,6 +1,7 @@
 import e2LSH
 import pyswarms as ps
 from utils import *
+from sklearn.metrics import roc_curve, auc  ###计算roc和auc
 
 
 def optimal_lsh(params):
@@ -66,7 +67,7 @@ def pso(x):
 if __name__ == "__main__":
 
     C = pow(2, 32) - 5
-    dataSet = readData("test_data.csv")
+    dataSet = readData("data_set.csv")
     k = 20
     L = 5
     tableSize = 20
@@ -78,17 +79,24 @@ if __name__ == "__main__":
     dim1 = k
     trainlen = len(dataSet)
     dimensions = dim0 * dim1 * L
-    optimizer = ps.single.GlobalBestPSO(n_particles=1, dimensions=dimensions, options=options)
-    cost, Atotal = optimizer.optimize(pso, iters=1)
+    optimizer = ps.single.GlobalBestPSO(n_particles=, dimensions=dimensions, options=options)
+    cost, Atotal = optimizer.optimize(pso, iters=1000)
     hashTable, hashFuncGroups, fpRand = e2LSH.e2lsh_test(dataSet, Atotal, k, L, r=1, tableSize=20)
     cm_list = e2LSH.generate_cm(hashTable, dataSet, k=20)
 
     #
-    testdataSet = readData("test_data.csv")
+    testdataSet = readData("test_dataset.csv")
+    y_test = []
     testlen = len(testdataSet)
     dataSet.append(testdataSet)
     start = trainlen
     result = []
+    score = []
+    total_min = float('inf')
+    total_min_fp = 0
+    total_queryfp = 0
+    total_queryindex = 0
+    total_query = []
     for testindex in range(testlen):
         for hashFuncGroup in hashFuncGroups:
             query = dataSet[start + testindex]
@@ -99,19 +107,21 @@ if __name__ == "__main__":
             for fp in cm_list[queryIndex].list:
                 if cm_list[queryIndex].list[fp].state == 1:
                     temp = abs(fp - queryFp)
-                    if temp <= min:
+                    if temp < min:
                         min = temp
                         index = fp
-            temp = cm_list[queryIndex].list[index]
-            veclen = [query[i] - temp.cm[i] for i in range(len(query))]
-            Az = 1 - 1 / (1 + np.exp(-lamda * ((temp.rm / np.square(np.linalg.norm(veclen)))) - 1))
-            if Az > threshold:
-                result.append("abnormal")
-            else:
-                result.append("normal")
-
-            cm_list = e2LSH.update_cm(dataSet, hashTable, start + testindex, query, queryFp, queryIndex, cm_list)
-            cm_list = e2LSH.update_buckets(cm_list, threshold=0, tablesize=20)
+            if total_min > min:
+                total_min = min
+                total_min_fp = index
+                total_queryindex = queryIndex
+                total_queryfp = queryFp
+                total_query = query
+        temp = cm_list[total_queryindex].list[total_min_fp]
+        veclen = [total_query[i] - temp.cm[i] for i in range(dim0)]
+        Az = 1 - 1 / (1 + np.exp(-lamda * ((temp.rm / np.square(np.linalg.norm(veclen)))) - 1))
+        score.append(Az)
+        cm_list = e2LSH.update_cm(dataSet, hashTable, start + testindex, total_query, total_queryfp, total_queryindex, cm_list)
+        cm_list = e2LSH.update_buckets(cm_list, threshold=0, tablesize=20)
 
     query = [-2.7769, -5.6967, 5.9179, 0.37671, 1]
     indexes = e2LSH.nn_search(dataSet, query, k=20, L=5, r=1, tableSize=20)
