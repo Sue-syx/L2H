@@ -1,0 +1,1 @@
+2020-05-13 20:14:57.245 | INFO     | __main__:run:12 - Namespace(batch_size=64, code_length=[24], dataset='nus-wide-tc21', device=device(type='cpu'), gamma=200, gpu=None, lr=0.0001, max_epoch=3, max_iter=50, num_query=1000, num_samples=2000, num_workers=0, root='.././datasets/NUS-WIDE', topk=-1)
