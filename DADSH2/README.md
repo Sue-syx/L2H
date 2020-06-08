@@ -12,11 +12,11 @@ U：网络输出，V：数据集编码
 
 **固定U，V，W1 更新 W2 ：**
 
-<img src="H:\科研\SRTP\git_space\DADSH2\updateW2.png" style="zoom:80%;" />
+<img src=".\updateW2.png" style="zoom:80%;" />
 
 **固定U，W1, W2 更新 V ：**
 
-<img src="H:\科研\SRTP\git_space\DADSH2\updateV.png" style="zoom:80%;" />
+<img src=".\updateV.png" style="zoom:80%;" />
 
 
 
