@@ -1,15 +1,3 @@
-<head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-</head>
-
 **Objective Function：**
 $$
 \begin{align} \mathop{min}\limits_{U,V,W_1,W_2} F = \rVert U^T&V-\frac{2}{3}lS \rVert_F^2    	+\varphi\rVert \tilde{\\V}-U\rVert_F^2  \\    +\eta \left \| UI\right \|_F^2&+\mu\left\|UU^T-\frac{2}{3}nI\right\|_F^2    +\gamma\Psi(U) \tag{1.1}  \\      \Psi(U)= \sum ^{l}_{k=1}\sum &^{m}_{i=1}2\left| U_{ki}\right| \cdot \left( 1-U^{2}_{ki}\right) \\U\in \left[ -1,1\right]^{l\times m},&V\in \left\{ -1,0,1\right\} ^{l\times n},\tilde V\in \left\{ -1,0,1\right\} ^{l\times m},S\in\left\{-1,1\right\} ^{m\times n} \\\end{align}
