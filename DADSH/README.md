@@ -14,5 +14,5 @@ U：网络输出，V：数据集编码
 
 **结果：**
 
-<img src=".\result.png" style="zoom:50%;" />
+<img src=".\result.png" style="zoom:20%;" />
 
